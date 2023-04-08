@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/sounds/615745__rap2h__charlette-320-ternary.wav" type="AudioStream" id=1]
+[ext_resource path="res://src/Autoloads/BgMusic.gd" type="Script" id=2]
+
+[node name="MusicController" type="Node"]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+script = ExtResource( 2 )

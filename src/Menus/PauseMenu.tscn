@@ -1,0 +1,128 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/Fonts/Born2bSportyV2.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/Menus/PauseMenu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0.466667 )
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color( 0.945098, 1, 0.00392157, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0 )
+border_width_left = 16
+border_width_top = 16
+border_width_right = 16
+border_width_bottom = 16
+border_color = Color( 0.945098, 1, 0.00392157, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="Theme" id=2]
+Button/colors/font_color = Color( 0.937255, 1, 0.207843, 1 )
+Button/colors/font_color_focus = Color( 0.937255, 1, 0.207843, 1 )
+Button/colors/font_color_hover = Color( 0.937255, 1, 0.207843, 1 )
+Button/fonts/font = SubResource( 1 )
+Button/styles/focus = SubResource( 5 )
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 256
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 1 )
+
+[node name="PauseMenu" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.317647 )
+
+[node name="Pause Menu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+
+[node name="CenterContainer" type="CenterContainer" parent="Pause Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Pause Menu/CenterContainer"]
+margin_left = 620.0
+margin_top = 64.0
+margin_right = 1300.0
+margin_bottom = 1016.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause Menu/CenterContainer/MarginContainer"]
+margin_right = 680.0
+margin_bottom = 952.0
+alignment = 1
+
+[node name="Label4" type="Label" parent="Pause Menu/CenterContainer/MarginContainer/VBoxContainer"]
+margin_right = 680.0
+margin_bottom = 256.0
+custom_colors/font_color = Color( 0.952941, 0.984314, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Paused"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="Pause Menu/CenterContainer/MarginContainer/VBoxContainer"]
+margin_top = 260.0
+margin_right = 680.0
+margin_bottom = 324.0
+custom_fonts/font = SubResource( 3 )
+
+[node name="Play" type="Button" parent="Pause Menu/CenterContainer/MarginContainer/VBoxContainer"]
+margin_top = 328.0
+margin_right = 680.0
+margin_bottom = 488.0
+text = "Resume Game"
+
+[node name="Label6" type="Label" parent="Pause Menu/CenterContainer/MarginContainer/VBoxContainer"]
+margin_top = 492.0
+margin_right = 680.0
+margin_bottom = 556.0
+custom_fonts/font = SubResource( 3 )
+
+[node name="Play2" type="Button" parent="Pause Menu/CenterContainer/MarginContainer/VBoxContainer"]
+pause_mode = 2
+margin_top = 560.0
+margin_right = 680.0
+margin_bottom = 720.0
+text = "Restart Level"
+
+[node name="Label3" type="Label" parent="Pause Menu/CenterContainer/MarginContainer/VBoxContainer"]
+margin_top = 724.0
+margin_right = 680.0
+margin_bottom = 788.0
+custom_fonts/font = SubResource( 3 )
+
+[node name="Quit Game" type="Button" parent="Pause Menu/CenterContainer/MarginContainer/VBoxContainer"]
+margin_top = 792.0
+margin_right = 680.0
+margin_bottom = 952.0
+text = "Quit Game"
+
+[connection signal="pressed" from="Pause Menu/CenterContainer/MarginContainer/VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Pause Menu/CenterContainer/MarginContainer/VBoxContainer/Play2" to="." method="_on_Play2_pressed"]
+[connection signal="pressed" from="Pause Menu/CenterContainer/MarginContainer/VBoxContainer/Quit Game" to="." method="_on_Quit_Game_pressed"]

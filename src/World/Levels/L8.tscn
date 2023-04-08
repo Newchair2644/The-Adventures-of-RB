@@ -1,0 +1,171 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://src/World/LevelTemplate/Gates/BlueGates.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/World/LevelTemplate/Gates/GreenGates.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/World/LevelTemplate/Gates/RedGates.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/World/LevelTemplate/Background.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/World/LevelTemplate/GateTogglers.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Actors/Player2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Actors/Player1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/World/Levels/Levels.gd" type="Script" id=8]
+[ext_resource path="res://src/World/LevelTemplate/LavaDetector.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/World/LevelTemplate/LevelDetector.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/World/Detectors/GateToggler.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/World/Door.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/World/Key.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/World/ScreenTransition.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/World/Levels/FadeIn.gd" type="Script" id=15]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48.5, 241 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "FadeIn"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="L8" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="Background" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 0, 1, 0, 1, 4, 1, 2, 4, 1, 3, 4, 1, 4, 4, 1, 5, 4, 1, 6, 4, 1, 7, 4, 1, 8, 4, 1, 9, 4, 1, 10, 4, 1, 11, 4, 1, 12, 4, 1, 13, 4, 1, 14, 4, 1, 15, 4, 1, 16, 4, 1, 17, 4, 1, 18, 4, 1, 19, 4, 1, 20, 4, 1, 21, 4, 1, 22, 4, 1, 23, 1, 0, 24, 5, 0, 25, 5, 0, 26, 5, 0, 65536, 3, 65536, 65537, 7, 0, 65538, 7, 0, 65539, 7, 0, 65540, 7, 0, 65541, 7, 0, 65542, 7, 0, 65543, 7, 0, 65544, 7, 0, 65545, 7, 0, 65546, 7, 0, 65547, 7, 0, 65548, 7, 0, 65549, 7, 0, 65550, 7, 0, 65551, 7, 0, 65552, 7, 0, 65553, 7, 0, 65554, 7, 0, 65555, 7, 0, 65556, 7, 0, 65557, 7, 0, 65558, 7, 0, 65559, 3, 0, 65562, 5, 0, 131072, 3, 65536, 131073, 7, 0, 131074, -1610612729, 0, 131075, -1610612729, 0, 131076, -1610612729, 0, 131077, -1610612729, 0, 131078, -1610612729, 0, 131079, 4, 0, 131080, 4, 2, 131081, -1610612729, 0, 131082, -1610612729, 0, 131083, -1610612729, 0, 131084, 4, 0, 131085, 4, 2, 131086, -1610612729, 0, 131087, -1610612729, 0, 131088, -1610612729, 0, 131089, 4, 0, 131090, 4, 2, 131091, -1610612729, 0, 131092, -1610612729, 0, 131093, -1610612729, 0, 131094, 7, 0, 131095, 3, 65536, 131098, 5, 0, 196608, 3, 65536, 196609, 7, 0, 196610, -1610612729, 0, 196611, -1610612729, 0, 196612, 7, 0, 196613, -1073741817, 0, 196614, 7, 0, 196615, 7, 0, 196616, 7, 0, 196617, 7, 0, 196618, 7, 0, 196619, 7, 0, 196620, 7, 0, 196621, 7, 0, 196622, 7, 0, 196623, -1610612729, 0, 196624, -1610612729, 0, 196625, -1610612729, 0, 196626, -1610612729, 0, 196627, -1610612729, 0, 196628, -1610612729, 0, 196629, -1610612729, 0, 196630, 7, 0, 196631, 3, 65536, 196634, 5, 0, 262144, 3, 65536, 262145, 7, 0, 262146, -1610612729, 0, 262147, 4, 0, 262148, 4, 1, 262149, 4, 1, 262150, 4, 1, 262151, 4, 1, 262152, 4, 1, 262153, 4, 1, 262154, 4, 1, 262155, 4, 1, 262156, 4, 1, 262157, 4, 1, 262158, 4, 1, 262159, 4, 1, 262160, 4, 1, 262161, 4, 1, 262162, 4, 1, 262163, 4, 1, 262164, 4, 1, 262165, 536870913, 0, 262166, 7, 0, 262167, 3, 65536, 262170, 5, 0, 327680, 3, 65536, 327681, 7, 0, 327682, -1610612729, 0, 327683, -1073741812, 0, 327684, 7, 0, 327685, 7, 0, 327686, 7, 0, 327687, 7, 0, 327688, 7, 0, 327689, -1073741812, 0, 327690, 7, 0, 327691, 7, 0, 327692, 7, 0, 327693, 7, 0, 327694, 7, 0, 327695, -1073741812, 0, 327696, 7, 0, 327697, 7, 0, 327698, 7, 0, 327699, 7, 0, 327700, 7, 0, 327701, 536870915, 131072, 327702, 7, 0, 327703, 3, 65536, 327706, 5, 0, 393216, 3, 65536, 393217, 7, 0, 393218, -1610612729, 0, 393219, -1073741812, 0, 393220, 7, 0, 393221, 7, 0, 393222, 7, 0, 393223, 7, 0, 393224, 7, 0, 393225, -1073741812, 0, 393226, 7, 0, 393227, 7, 0, 393228, 7, 0, 393229, 7, 0, 393230, 7, 0, 393231, -1073741812, 0, 393232, 7, 0, 393233, 7, 0, 393234, 7, 0, 393235, 7, 0, 393236, 7, 0, 393237, 7, 0, 393238, 7, 0, 393239, 3, 65536, 393242, 5, 0, 458752, 3, 65536, 458753, 7, 0, 458754, -1610612729, 0, 458755, -1073741812, 0, 458756, 7, 0, 458757, 7, 0, 458758, 7, 0, 458759, 7, 0, 458760, 5, 0, 458761, -1073741812, 0, 458762, 7, 0, 458763, 7, 0, 458764, 7, 0, 458765, 7, 0, 458766, 7, 0, 458767, -1073741812, 0, 458768, -1073741817, 0, 458769, 7, 0, 458770, 7, 0, 458771, 7, 0, 458772, 4, 0, 458773, 4, 1, 458774, 4, 2, 458775, 3, 65536, 458778, 5, 0, 524288, 3, 65536, 524289, 7, 0, 524290, -1610612729, 0, 524291, -1073741812, 0, 524292, 7, 0, 524293, 7, 0, 524294, 7, 0, 524295, 7, 0, 524296, 7, 0, 524297, -1073741812, 0, 524298, 7, 0, 524299, 7, 0, 524300, 7, 0, 524301, 7, 0, 524302, 7, 0, 524303, -1073741812, 0, 524304, 7, 0, 524305, 7, 0, 524306, 7, 0, 524307, 7, 0, 524308, 7, 0, 524309, 7, 0, 524310, 7, 0, 524311, 3, 65536, 524314, 5, 0, 589824, 3, 65536, 589825, 7, 0, 589826, -1610612729, 0, 589827, -1073741812, 0, 589828, 7, 0, 589829, 7, 0, 589830, 7, 0, 589831, 7, 0, 589832, 7, 0, 589833, -1073741812, 0, 589834, 7, 0, 589835, 7, 0, 589836, 7, 0, 589837, 7, 0, 589838, 7, 0, 589839, -1073741812, 0, 589840, 7, 0, 589841, 7, 0, 589842, 7, 0, 589843, 7, 0, 589844, 7, 0, 589845, 7, 0, 589846, 7, 0, 589847, 3, 65536, 589850, 5, 0, 655360, 3, 65536, 655361, 7, 0, 655362, -1610612729, 0, 655363, -1073741812, 0, 655364, 7, 0, 655365, 7, 0, 655366, 7, 0, 655367, 7, 0, 655368, 7, 0, 655369, -1073741812, 0, 655370, 7, 0, 655371, 7, 0, 655372, 7, 0, 655373, 7, 0, 655374, 7, 0, 655375, -1073741812, 0, 655376, 7, 0, 655377, 7, 0, 655378, 7, 0, 655379, 7, 0, 655380, 7, 0, 655381, 7, 0, 655382, 7, 0, 655383, 3, 65536, 655386, 5, 0, 720896, 3, 131072, 720897, 7, 0, 720898, -1610612729, 0, 720899, 7, 0, 720900, 7, 0, 720901, 7, 0, 720902, 7, 0, 720903, 7, 0, 720904, 7, 0, 720905, 7, 0, 720906, 7, 0, 720907, 7, 0, 720908, 7, 0, 720909, 7, 0, 720910, 7, 0, 720911, 7, 0, 720912, 7, 0, 720913, 7, 0, 720914, 7, 0, 720915, 7, 0, 720916, 7, 0, 720917, 7, 0, 720918, 7, 0, 720919, 3, 131072, 720922, 5, 0, 786432, 7, 0, 786433, 7, 0, 786434, 7, 0, 786435, 7, 0, 786436, 7, 0, 786437, 7, 0, 786438, 7, 0, 786439, 7, 0, 786440, 7, 0, 786441, 7, 0, 786442, 7, 0, 786443, 7, 0, 786444, 7, 0, 786445, 7, 0, 786446, 7, 0, 786447, 7, 0, 786448, 7, 0, 786449, 7, 0, 786450, 7, 0, 786451, 7, 0, 786452, 7, 0, 786453, 7, 0, 786454, 7, 0, 786455, 7, 0, 786458, 5, 0, 851968, 8, 0, 851969, 8, 0, 851970, 8, 0, 851971, 8, 0, 851972, 8, 0, 851973, 8, 0, 851974, 8, 0, 851975, 8, 0, 851976, 8, 0, 851977, 8, 0, 851978, 8, 0, 851979, 8, 0, 851980, 8, 0, 851981, 8, 0, 851982, 8, 0, 851983, 8, 0, 851984, 8, 0, 851985, 8, 0, 851986, 8, 0, 851987, 8, 0, 851988, 8, 0, 851989, 8, 0, 851990, 8, 0, 851991, 8, 0, 851992, 5, 0, 851993, 5, 0, 851994, 5, 0 )
+
+[node name="KeyAndDoor" type="Node2D" parent="."]
+
+[node name="Door" parent="KeyAndDoor" instance=ExtResource( 12 )]
+position = Vector2( 1828, 972 )
+
+[node name="Key" parent="KeyAndDoor" instance=ExtResource( 13 )]
+position = Vector2( 669, 497 )
+
+[node name="GateTogglers" parent="." instance=ExtResource( 5 )]
+tile_data = PoolIntArray( 65539, 536870912, 65536, 131075, 536870912, 65536, 196611, 536870912, 65536, 196615, 536870912, 0, 196616, 536870912, 131072, 196620, 536870912, 131072, 196621, 536870912, 65536, 196625, 536870912, 65536, 196626, 536870912, 0 )
+
+[node name="GreenGates" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 327700, 536870913, 0, 393236, 536870913, 0, 524307, -2147483647, 0, 589834, -536870912, 0, 589835, -536870912, 0, 589836, -536870912, 0, 589837, -536870912, 0, 589838, -536870912, 0, 655365, -2147483647, 0, 655366, -2147483647, 0, 655367, -2147483647, 0, 786417, 0, 0 )
+
+[node name="BlueGates" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 262145, -536870912, 0, 262146, -536870912, 0, 327687, 536870912, 0, 327696, 536870913, 0, 393223, 536870912, 0, 393232, 536870913, 0, 458759, 536870912, 0, 458768, 536870913, 0, 524304, 536870913, 0, 655370, -536870912, 0, 655371, -536870912, 0, 655373, -536870912, 0, 655374, -536870912, 0, 720899, 1, 0, 720912, -2147483647, 0, 786435, 1, 0 )
+
+[node name="RedGates" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 458770, -1610612735, 0, 524293, -2147483648, 0, 524298, -536870911, 0, 524299, -536870911, 0, 524300, -536870911, 0, 524301, -536870911, 0, 524302, -536870911, 0, 589831, -2147483648, 0, 655378, -1610612735, 0, 720902, -2147483648, 0, 720906, -536870911, 0, 720907, -536870911, 0, 720908, -536870911, 0, 720909, -536870911, 0, 720910, -536870911, 0 )
+
+[node name="Player1" parent="." instance=ExtResource( 7 )]
+position = Vector2( 196, 956 )
+
+[node name="Player2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 110, 962 )
+
+[node name="LavaDetector" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1362, 1037 )
+
+[node name="CollisionShape2D" parent="LavaDetector" index="0"]
+position = Vector2( -119.5, -407 )
+shape = SubResource( 1 )
+
+[node name="LavaDetector2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 881, 1037 )
+
+[node name="CollisionShape2D" parent="LavaDetector2" index="0"]
+position = Vector2( -119.5, -407 )
+shape = SubResource( 1 )
+
+[node name="LavaDetector3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 403, 1037 )
+
+[node name="CollisionShape2D" parent="LavaDetector3" index="0"]
+position = Vector2( -119.5, -407 )
+shape = SubResource( 1 )
+
+[node name="LevelDetector" parent="." instance=ExtResource( 10 )]
+position = Vector2( 1989, 925 )
+
+[node name="GateToggler2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1492, 272 )
+color = "green"
+
+[node name="GateToggler3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1409, 272 )
+color = "blue"
+
+[node name="GateToggler4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1086, 272 )
+color = "blue"
+
+[node name="GateToggler5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 288, 272 )
+color = "blue"
+
+[node name="GateToggler6" parent="." instance=ExtResource( 11 )]
+position = Vector2( 288, 184 )
+color = "blue"
+
+[node name="GateToggler7" parent="." instance=ExtResource( 11 )]
+position = Vector2( 288, 112 )
+color = "blue"
+
+[node name="GateToggler8" parent="." instance=ExtResource( 11 )]
+position = Vector2( 694, 267 )
+color = "red"
+
+[node name="GateToggler9" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1017, 267 )
+color = "red"
+
+[node name="GateToggler10" parent="." instance=ExtResource( 11 )]
+position = Vector2( 609, 267 )
+color = "green"
+
+[node name="ScreenTransition" parent="." instance=ExtResource( 14 )]
+nextLevel = 9
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource( 15 )
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+anims/FadeIn = SubResource( 2 )
+anims/RESET = SubResource( 3 )
+
+[node name="Key" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1805, 354 )
+
+[node name="Key2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1895, 968 )
+
+[connection signal="collected" from="KeyAndDoor/Key" to="KeyAndDoor/Door" method="_on_Key_collected"]
+[connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="CanvasLayer" method="_on_AnimationPlayer_animation_finished"]
+
+[editable path="LavaDetector"]
+[editable path="LavaDetector2"]
+[editable path="LavaDetector3"]

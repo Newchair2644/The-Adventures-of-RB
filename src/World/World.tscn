@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/World/ScreenTransition.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/World/Levels/L1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/World/World.gd" type="Script" id=4]
+[ext_resource path="res://src/World/LevelTemplate/LavaDetector.tscn" type="PackedScene" id=7]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="CurrentLevel" parent="." instance=ExtResource( 3 )]
+position = Vector2( -2, 0 )
+
+[node name="LavaDetector" parent="." instance=ExtResource( 7 )]
+position = Vector2( 3283, 1034 )
+
+[node name="ScreenTransition" parent="." instance=ExtResource( 1 )]

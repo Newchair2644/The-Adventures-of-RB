@@ -1,0 +1,115 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://src/Hooks/GrapplingHook.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/Actors/Player1.gd" type="Script" id=2]
+[ext_resource path="res://assets/FINISHED V2 Character Sprites.png" type="Texture" id=3]
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 3 )
+region = Rect2( 67, 0, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 3 )
+region = Rect2( 134, 0, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 3 )
+region = Rect2( 201, 0, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 324, 62, 76 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 3 )
+region = Rect2( 67, 324, 62, 76 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 3 )
+region = Rect2( 134, 324, 62, 76 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 160, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 3 )
+region = Rect2( 67, 160, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 3 )
+region = Rect2( 134, 160, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 3 )
+region = Rect2( 201, 160, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 3 )
+region = Rect2( 268, 160, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 3 )
+region = Rect2( 335, 160, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 3 )
+region = Rect2( 402, 160, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 3 )
+region = Rect2( 469, 160, 62, 80 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 3 )
+region = Rect2( 536, 160, 62, 80 )
+
+[sub_resource type="SpriteFrames" id=44]
+animations = [ {
+"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 45 ), SubResource( 46 ), SubResource( 47 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=49]
+extents = Vector2( 31, 30.5 )
+
+[sub_resource type="CapsuleShape2D" id=48]
+radius = 12.0
+height = 6.0
+
+[node name="Player1" type="KinematicBody2D"]
+z_index = 1
+collision_mask = 6
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." groups=["Player"]]
+frames = SubResource( 44 )
+animation = "walk"
+
+[node name="Head" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -4.5 )
+shape = SubResource( 49 )
+
+[node name="Legs" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 24 )
+shape = SubResource( 48 )
+
+[node name="Grappling Hook" parent="." instance=ExtResource( 1 )]
+show_behind_parent = true
+hook_length = 1750
