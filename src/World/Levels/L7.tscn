@@ -88,7 +88,7 @@ position = Vector2( 1172, 198 )
 color = "green"
 
 [node name="GateToggler3" parent="." instance=ExtResource( 11 )]
-position = Vector2( 847, 198 )
+position = Vector2( 849, 195 )
 color = "red"
 
 [node name="GateToggler4" parent="." instance=ExtResource( 11 )]
