@@ -13,8 +13,8 @@
 [ext_resource path="res://src/World/Detectors/GateToggler.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/World/ScreenTransition.tscn" type="PackedScene" id=12]
 [ext_resource path="res://src/World/Levels/FadeIn.gd" type="Script" id=13]
-[ext_resource path="res://src/World/Key.tscn" type="PackedScene" id=14]
-[ext_resource path="res://src/World/Door.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/World/LevelTemplate/Key.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/World/LevelTemplate/Door.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 546.001, 44.0938 )
@@ -111,12 +111,13 @@ color = Color( 0, 0, 0, 1 )
 anims/FadeIn = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 
-[node name="Door" parent="." instance=ExtResource( 15 )]
-position = Vector2( 1647, 893 )
-
 [node name="Key" parent="." instance=ExtResource( 14 )]
 position = Vector2( 1772, 593 )
 
+[node name="Door" parent="." instance=ExtResource( 15 )]
+position = Vector2( 1647, 893 )
+
 [connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="CanvasLayer" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="collected" from="Key" to="Door" method="_on_Key_collected"]
 
 [editable path="LavaDetector"]

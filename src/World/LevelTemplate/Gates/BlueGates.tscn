@@ -4,14 +4,14 @@
 [ext_resource path="res://assets/Building Block Sprites.png" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=30]
-points = PoolVector2Array( 8, 20, 0, 19.9122, 0.1842, 0.127739, 8, 0.127739 )
+points = PoolVector2Array( 14.1249, 19.7776, 6.04961, 19.7776, 6.04961, 0.127743, 14.1249, 0.127743 )
 
 [sub_resource type="TileSet" id=29]
 0/name = "Building Block Sprites.png 0"
 0/texture = ExtResource( 2 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 181, 25, 8, 20 )
+0/region = Rect2( 175, 25, 20, 20 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
@@ -25,7 +25,7 @@ points = PoolVector2Array( 8, 20, 0, 19.9122, 0.1842, 0.127739, 8, 0.127739 )
 1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 6, 0, 8, 20 )
+1/region = Rect2( 0, 0, 20, 20 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )

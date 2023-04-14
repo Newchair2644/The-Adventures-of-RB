@@ -67,4 +67,3 @@ scale = Vector2( 4.004, 3.857 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 20, 20 )
 format = 1
-tile_data = PoolIntArray( 786435, 0, 0, 786436, 0, 1, 786437, 0, 2, 786442, 2, 0, 786443, 0, 0, 786444, 0, 2, 786445, 2, 0 )

@@ -15,8 +15,8 @@
 [ext_resource path="res://src/World/Levels/FadeIn.gd" type="Script" id=13]
 [ext_resource path="res://assets/Building Block Sprites.png" type="Texture" id=14]
 [ext_resource path="res://assets/GATES.png" type="Texture" id=15]
-[ext_resource path="res://src/World/Key.tscn" type="PackedScene" id=16]
-[ext_resource path="res://src/World/Door.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/World/LevelTemplate/Key.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/World/LevelTemplate/Door.tscn" type="PackedScene" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=56]
 points = PoolVector2Array( 12.2404, 20, 3.89591, 20, 3.89591, 0.256073, 12.2404, 0.256073 )

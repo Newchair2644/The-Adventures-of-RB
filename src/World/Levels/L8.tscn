@@ -11,8 +11,8 @@
 [ext_resource path="res://src/World/LevelTemplate/LavaDetector.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/World/LevelTemplate/LevelDetector.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/World/Detectors/GateToggler.tscn" type="PackedScene" id=11]
-[ext_resource path="res://src/World/Door.tscn" type="PackedScene" id=12]
-[ext_resource path="res://src/World/Key.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/World/LevelTemplate/Door.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/World/LevelTemplate/Key.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/World/ScreenTransition.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/World/Levels/FadeIn.gd" type="Script" id=15]
 
