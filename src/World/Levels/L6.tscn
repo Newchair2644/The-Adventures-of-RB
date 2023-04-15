@@ -528,10 +528,10 @@ tile_data = PoolIntArray( 65538, 0, 131072, 65541, 0, 0, 65553, 536870912, 0, 65
 tile_data = PoolIntArray( 786451, 536870912, 0 )
 
 [node name="BlueGates" parent="." instance=ExtResource( 13 )]
-tile_data = PoolIntArray( 786450, 536870912, 0 )
+tile_data = PoolIntArray( 786450, 1, 0 )
 
 [node name="GreenGates" parent="." instance=ExtResource( 6 )]
-tile_data = PoolIntArray( 786417, 0, 0, 786449, 1, 0 )
+tile_data = PoolIntArray( 786449, 1, 0 )
 
 [node name="Player1" parent="." instance=ExtResource( 8 )]
 position = Vector2( 127, 881 )

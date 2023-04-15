@@ -6,4 +6,3 @@ func _on_Key_collected() -> void:
 
 func _on_AnimationPlayer_animation_finished(_anim_name):
 	call_deferred("queue_free")
-
