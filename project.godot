@@ -39,6 +39,7 @@ window/stretch/aspect="keep"
 [global]
 
 test=false
+editor=false
 
 [gui]
 
